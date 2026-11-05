@@ -6,7 +6,7 @@ Penny does not exist. Her objects, shows and prices are invented, and the pictur
 
 ## Stack
 
-Next.js 16, React 19, Tailwind CSS 4, Motion 14. Static output, deployed on Vercel.
+Next.js 16, React 19, Tailwind CSS 4, Motion 14. Static output, deployed on Vercel. Visits, clicks, session replays and heatmaps go to a self hosted Umami.
 
 ## Run it
 

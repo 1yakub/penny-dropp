@@ -195,6 +195,8 @@ export function Shop() {
                     key={work.code}
                     type="button"
                     onClick={() => void drop(work)}
+                    data-umami-event="Slot tapped"
+                    data-umami-event-slot={work.code}
                     aria-label={`${work.code}, ${work.title}`}
                     className={`group relative h-[clamp(112px,16vh,150px)] overflow-hidden border-[3px] border-ink focus-visible:z-20 lg:h-[clamp(104px,calc((100dvh-428px)/3),230px)] ${slotBackground[work.color]}`}
                   >
@@ -251,6 +253,8 @@ export function Shop() {
                     aria-label={`Row ${key}`}
                     aria-pressed={letter === key}
                     onClick={() => press(key)}
+                    data-umami-event="Keypad"
+                    data-umami-event-key={key}
                     className={`${keyButton} min-h-14 text-3xl lg:text-5xl ${letter === key ? "bg-lime" : ""}`}
                   >
                     {key}
@@ -264,6 +268,8 @@ export function Shop() {
                     type="button"
                     aria-label={`Slot ${key}`}
                     onClick={() => press(key)}
+                    data-umami-event="Keypad"
+                    data-umami-event-key={key}
                     className={`${keyButton} min-h-14 text-3xl lg:text-5xl`}
                   >
                     {key}
@@ -273,6 +279,7 @@ export function Shop() {
               <button
                 type="button"
                 onClick={() => surprise()}
+                data-umami-event="Surprise me"
                 className={`${keyButton} min-h-14 px-3 py-2 text-2xl lg:flex-1 lg:text-3xl`}
               >
                 Surprise me
@@ -299,6 +306,8 @@ export function Shop() {
                 <button
                   type="button"
                   onClick={() => setCurrent(work)}
+                  data-umami-event="List item opened"
+                  data-umami-event-slot={work.code}
                   aria-label={`${work.code}, ${work.title}, ${work.price}`}
                   className="grid w-full grid-cols-[64px_minmax(0,1fr)] items-center gap-x-3 p-2 text-left hover:bg-ink hover:text-lime focus-visible:relative focus-visible:z-10 md:grid-cols-[84px_56px_minmax(0,1.1fr)_minmax(0,1.5fr)_64px_minmax(0,0.9fr)] md:gap-x-5"
                 >
@@ -363,6 +372,7 @@ export function Shop() {
                   type="button"
                   autoFocus
                   onClick={() => dialogRef.current?.close()}
+                  data-umami-event="Close object"
                   className={`${keyButton} min-h-12 flex-1 whitespace-nowrap px-4 py-2 text-xl`}
                 >
                   Close
@@ -370,6 +380,7 @@ export function Shop() {
                 <button
                   type="button"
                   onClick={() => void dropAnother()}
+                  data-umami-event="Drop another"
                   className={`${keyButton} min-h-12 flex-1 whitespace-nowrap px-4 py-2 text-xl`}
                 >
                   Drop another

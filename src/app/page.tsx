@@ -38,13 +38,13 @@ export default function Home() {
             Penny Dropp is an imaginary artist who makes useless objects very carefully. Pick a slot and one falls out.
           </p>
           <nav aria-label="On this page" className="flex flex-wrap gap-2">
-            <a href="#everything" className={navLink}>
+            <a href="#everything" data-umami-event="See the list" className={navLink}>
               See the list
             </a>
-            <a href="#penny" className={navLink}>
+            <a href="#penny" data-umami-event="About Penny" className={navLink}>
               About Penny
             </a>
-            <a href="#buy" className={navLink}>
+            <a href="#buy" data-umami-event="Buy one" className={navLink}>
               Buy one
             </a>
           </nav>
@@ -145,7 +145,7 @@ export default function Home() {
             Penny is made up, so she cannot post you a sad egg. A real artist near you can make something better. Go and
             pay one.
           </p>
-          <a href="#machine" className={`${navLink} mt-8 inline-block !text-2xl !leading-none`}>
+          <a href="#machine" data-umami-event="Back to the machine" className={`${navLink} mt-8 inline-block !text-2xl !leading-none`}>
             Back to the machine
           </a>
         </div>
@@ -154,7 +154,8 @@ export default function Home() {
       <footer className="bg-ink px-3 py-8 text-paper md:px-6">
         <p className="mx-auto max-w-[1240px] text-base leading-snug">
           Penny Dropp is a fictional artist. Her objects, shows and prices are invented, and the pictures were made with
-          an AI image generator. This site is not about any real person.
+          an AI image generator. This site is not about any real person. Visits here, including clicks and scrolling, are
+          recorded with Umami, without cookies.
         </p>
       </footer>
     </main>
