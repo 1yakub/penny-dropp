@@ -46,11 +46,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${display.variable} ${led.variable} ${body.variable} antialiased`}>
       <body className="min-h-dvh overflow-x-clip">
         {children}
+        {/* Umami's heatmap page loads this site in a frame. That preview is not a visit. */}
+        <Script id="umami-top-window-only" strategy="beforeInteractive">
+          {"window.umamiTopWindowOnly = function (type, payload) { return window.self === window.top ? payload : false; };"}
+        </Script>
         <Script
           src={`${UMAMI_HOST}/script.js`}
           data-website-id={UMAMI_WEBSITE_ID}
           data-domains="pennydropp.vercel.app"
           data-performance="true"
+          data-before-send="umamiTopWindowOnly"
         />
         <Script src={`${UMAMI_HOST}/recorder.js`} data-website-id={UMAMI_WEBSITE_ID} />
       </body>
